@@ -7,9 +7,14 @@ i dont recommend you do this before jailbreaking at least once.
 2. grab the latest release of [vr2jb](https://github.com/BnuuySolutions/vr2jb/releases/latest)
 3. extract the files inside the zip into the vr2jb folder
 4. (if you havent) install steamvr
-5. (optional) add any extras you want into the /extras/ folder (.lnks work)
+5. (optional) add any extra things you want open into a folder named extras in the same folder as the script (.lnks work)
 6. run the script
 easy as pie.
+
+in your psvr2tk-jb-starter folder, you should now have:
+* psvr2.py
+* vr2jb > vr2jb.exe, etc
+* extras > example.lnk, etc (optional)
 ## Bugs
 issues accepted ig idk.
 also, does not work on linux.
