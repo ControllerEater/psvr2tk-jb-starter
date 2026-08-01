@@ -7,7 +7,7 @@ i dont recommend you do this before jailbreaking at least once.
 2. grab the latest release of [vr2jb](https://github.com/BnuuySolutions/vr2jb/releases/latest)
 3. extract the files inside the zip into the vr2jb folder
 4. (if you havent) install steamvr
-5. (optional) add any extra things you want open into a folder named extras in the same folder as the script (.lnks work)
+5. (optional) add any extra things you want open into a folder named extras in the same folder as the script (.lnks and .sh work)
 6. run the script (exe or py)
 easy as py.
 ### Linux
