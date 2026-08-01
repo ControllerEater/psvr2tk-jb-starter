@@ -1,12 +1,19 @@
 import subprocess
 import webbrowser
 import os
+from sys import platform
 # imports above
 base = os.path.dirname(os.path.abspath(__file__))
 print("Initiating jailbreak...") # start vr2jb
 try:
-    ran = subprocess.run("vr2jb/vr2jb.exe")
-    if ran.returncode != 0: print("jailbreak failed! check that a folder named \"vr2jb\" exists and is near the script, and contains vr2jb.exe")
+    print("Detected platform: " + platform)
+    if platform == "win32":
+        ran = subprocess.run("vr2jb/vr2jb.exe")
+    else:
+        ran = subprocess.run("vr2jb/vr2jb")
+    if ran.returncode != 0:
+        print("jailbreak failed! check that a folder named \"vr2jb\" exists and is near the script, and contains vr2jb")
+        if platform != "win32": print("Make sure to run \"chmod +x ./*\" in the vr2jb folder.")
     else:
         print("jailbreak succeeded")
 except FileNotFoundError:
