@@ -10,7 +10,12 @@ i dont recommend you do this before jailbreaking at least once.
 5. (optional) add any extra things you want open into a folder named extras in the same folder as the script (.lnks work)
 6. run the script (exe or py)
 easy as py.
-
+### Linux
+additional steps required for linux:
+7. cd into the vr2jb folder
+8. run the following: ``chmod +x ./*``
+if you prefer to use wayvr, use the launch arg ``wayvr``.
+### Final check
 in your psvr2tk-jb-starter folder, you should now have:
 * psvr2.py
 * vr2jb > vr2jb.exe, etc
