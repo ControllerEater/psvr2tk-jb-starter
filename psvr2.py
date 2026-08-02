@@ -1,28 +1,31 @@
 import subprocess
 import webbrowser
 import os
-from sys import platform
-from sys import argv
+import sys
 # imports above
-base = os.path.dirname(os.path.abspath(__file__))
+if getattr(sys, "frozen", False):
+    base = os.path.dirname(sys.executable)
+else:
+    base = os.path.dirname(os.path.abspath(__file__))
 wayvr = False
-if len(argv) >= 2:
-    if argv[1] == "wayvr":
+if len(sys.argv) >= 2:
+    if sys.argv[1] == "wayvr":
         wayvr=True
         print("Using wayvr!")
 print("Initiating jailbreak...") # start vr2jb
 try:
-    print("Detected platform: " + platform)
-    if platform == "win32":
-        ran = subprocess.run("vr2jb/vr2jb.exe")
-    else: ran = subprocess.run("vr2jb/vr2jb")
+    print("Detected platform: " + sys.platform)
+    vr2jb_dir = os.path.join(base, "vr2jb")
+    vr2jb_name = "vr2jb.exe" if sys.platform == "win32" else "vr2jb"
+    vr2jb_path = os.path.join(vr2jb_dir, vr2jb_name)
+    ran = subprocess.run([vr2jb_path], cwd=vr2jb_dir)
     if ran.returncode != 0:
         print("jailbreak failed! check that a folder named \"vr2jb\" exists and is near the script, and contains vr2jb")
-        if platform != "win32": print("Make sure to run \"chmod +x ./*\" in the vr2jb folder.")
+        if sys.platform != "win32": print("Make sure to run \"chmod +x ./*\" in the vr2jb folder.")
     else:
         print("jailbreak succeeded")
 except FileNotFoundError:
-    print("No jailbreak folder found! Skipping jailbreak...")
+    print("No jailbreak executable found at \"" + vr2jb_path + "\"! Skipping jailbreak...")
 print("initializing SteamVR") # start steamvr
 if wayvr:
     print("Starting WayVR...")
@@ -36,7 +39,7 @@ try:
     extras = os.listdir(os.path.join(base, "extras"))
     if len(extras) != 0:
         print("Extras found!")
-        if platform != "win32":
+        if sys.platform != "win32":
             for extra in extras:
                 if extra.endswith(".sh"): subprocess.run(["bash", "extras/" + extra])
                 else: subprocess.run("extras/" + extra)
