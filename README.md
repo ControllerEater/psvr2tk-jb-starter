@@ -3,7 +3,7 @@ an app to start the recently-released PSVR2 Toolkit 1.0's Jailbreaker, and then 
 ## Setup
 its a very simple setup process, you can not screw it up.
 i dont recommend you do this before jailbreaking at least once.
-1. download the code and extract it
+1. download the code and extract it, if you have git: ``git clone https://github.com/ControllerEater/psvr2tk-jb-starter.git``
 2. grab the latest release of [vr2jb](https://github.com/BnuuySolutions/vr2jb/releases/latest)
 3. extract the files inside the zip into the vr2jb folder
 4. (if you havent) install steamvr
@@ -12,9 +12,9 @@ i dont recommend you do this before jailbreaking at least once.
 easy as py.
 ### Linux
 additional steps required for linux:
-7. cd into the vr2jb folder
-8. run the following: ``chmod +x ./*``
-if you prefer to use wayvr, use the launch arg ``wayvr``.
+1. cd into the vr2jb folder
+2. run the following: ``chmod +x ./*``
+if you want to use wayvr on startup, use the launch arg ``wayvr`` or run ``startwayvr.sh``.
 ### Final check
 in your psvr2tk-jb-starter folder, you should now have:
 * psvr2.py
