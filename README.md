@@ -22,4 +22,4 @@ in your psvr2tk-jb-starter folder, you should now have:
 * extras > example.lnk, etc (optional)
 ## Bugs
 issues accepted ig idk.
-also, does not work on linux.
+explain the problem, and include your OS
