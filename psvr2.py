@@ -32,8 +32,6 @@ if wayvr:
     webbrowser.open("steam://rungameid/250820")
     print("Starting WayVR...")
     ran = subprocess.run("wayvr", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    if ran != 0: print("Error starting WayVR")
-    else: print("WayVR started successfully!")
 else:
     print("Starting SteamVR")
     webbrowser.open("steam://rungameid/250820")
